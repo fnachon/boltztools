@@ -231,7 +231,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-n", "--name", required=True, type=validate_name, help="Name of molecule can not exceed 5 characters")
     parser.add_argument("-i", "--input", help="CIF file containing molecule to add to boltz's CCD")
-    parser.add_argument("-s", "--smiles", help="Smiles to add to boltz's CCD. This does not currently allow atom name. This means it will NOT work with residues.")
+    parser.add_argument("-s", "--smiles", help="Smiles to add to boltz's CCD. This does not correctly name polymer residue atoms. This means it will NOT work with polymer residues.")
     parser.add_argument("-l", "--leaving_atoms", nargs="+", type=int, help="Offset of leaving atoms in smiles starting from 1. This only works for smiles.")
     parser.add_argument("-b", "--boltz_path", default=Path().home() / '.boltz', help="Path to boltz directory")
     args = parser.parse_args()

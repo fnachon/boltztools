@@ -19,6 +19,15 @@ Adding custom CIF or PDB.
 ./add_mol_to_ccd.py -n MLE -i MLE.cif
 ```
 
+Adding custom smiles. This does not correctly name polymer residue atoms. This means it will NOT work with polymer residues. The offset for leaving atoms may optionaly be provided using --leaving_atoms.
+The lewis structure with atom names will be saved to "{name}.png".
+
+```
+./add_mol_to_ccd.py -n ABC -s OC(=O)Cc1ccccc1
+./add_mol_to_ccd.py -n ABC -s OC(=O)Cc1ccccc1 --leaving_atoms 1
+./add_mol_to_ccd.py -n ABC -s OC(=O)Cc1ccccc1 -l 1
+```
+
 Specify boltz path manually if you have moved ~/.boltz
 
 ```
